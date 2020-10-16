@@ -116,7 +116,7 @@ __strong static ViewController *singleton = nil;
     [roleDict setValue:@"1006" forKey:@"ZYSDKThirdGameZoneId"];
     [roleDict setValue:@"无懈可击一服" forKey:@"ZYSDKThirdGameZoneName"];
     [roleDict setValue:@"流沙城" forKey:@"ZYSDKGuildName"];
-    
+    [roleDict setValue:@"1" forKey:@"ZYSDKSubmitType"];
     [OctopusSDK submitEntergame:roleDict];
     
 }
