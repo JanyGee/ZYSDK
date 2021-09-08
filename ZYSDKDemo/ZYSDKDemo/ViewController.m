@@ -131,19 +131,20 @@ __strong static ViewController *singleton = nil;
     
     NSMutableDictionary *orderDict = [NSMutableDictionary dictionary];
     [orderDict setValue:orderId forKey:@"ZYSDKOrderId"];            //必要参数
-    [orderDict setValue:@"1175" forKey:@"ZYSDKProductId"];          //必要参数
+    [orderDict setValue:@"2196" forKey:@"ZYSDKProductId"];          //必要参数
     [orderDict setValue:@"6.00" forKey:@"ZYSDKMoney"];              //必要参数
     [orderDict setValue:@"60钻石" forKey:@"ZYSDKProductName"];       //必要参数
     [orderDict setValue:@"商品详情" forKey:@"ZYSDKProductDesc"];
-    [orderDict setValue:@"http//baidu.com" forKey:@"ZYSDKoExInfo"];
+    [orderDict setValue:@"http//baidu.com" forKey:@"ZYSDKExInfo"];  //额外信息(可选)
+    [orderDict setValue:@"123456789" forKey:@"ZYSDKCPPrivateInfo"];//cp透传信息
     [orderDict setValue:@"1000" forKey:@"ZYSDKServerId"];           //必要参数
     [orderDict setValue:@"3234" forKey:@"ZYSDKRoleId"];             //必要参数
     [orderDict setValue:@"自定义用户所在服务器名称" forKey:@"ZYSDKServerName"];
-    [orderDict setValue:@"1" forKey:@"ZYSDKCount"];                 //购买数量 默认1
+    [orderDict setValue:@"3" forKey:@"ZYSDKCount"];                 //购买数量 默认1
     [orderDict setValue:@"测试应用" forKey:@"ZYSDKGameName"];
     [orderDict setValue:@"Jany" forKey:@"ZYSDKRoleName"];            //角色名字
     [orderDict setValue:@"100" forKey:@"ZYSDKRoleLevel"];            //角色等级
-    [orderDict setValue:@"http://140.143.79.107:9123/pgame/background_api/?command=recharge&sdk_type=2" forKey:@"ZYSDKNotifyUrl"];//订单回调地址
+    [orderDict setValue:@"http//baidu.com" forKey:@"ZYSDKNotifyUrl"];            //订单回调地址
     
     [OctopusSDK shopping:orderDict payDelegate:self];
     

@@ -72,14 +72,15 @@
  *  游戏角色已经进入游戏后，调用该方法，必须实现绑定区服
  *
  *  @param dict 该方法中相关信息的dictionary，其内应为以下key和值:
- ZYSDKRoleName:游戏角色名称(必需)
- ZYSDKRoleLevel:游戏角色等级(必需)
- ZYSDKRoleZoneId:角色区服ID(必需)
- ZYSDKRoleId:游戏角色ID(必需)
- ZYSDKVipLevel:角色VIP等级(必需)
- ZYSDKThirdGameZoneId:游戏区服Id(必需)
- ZYSDKThirdGameZoneName:游戏区服名称(必需)
- ZYSDKGuildName:公会名称(必需)
+     ZYSDKRoleName:游戏角色名称(必需)
+     ZYSDKRoleLevel:游戏角色等级(必需)
+     ZYSDKRoleZoneId:角色区服ID(必需)
+     ZYSDKRoleId:游戏角色ID(必需)
+     ZYSDKVipLevel:角色VIP等级(必需)
+     ZYSDKThirdGameZoneId:游戏区服Id(必需)
+     ZYSDKThirdGameZoneName:游戏区服名称(必需)
+     ZYSDKGuildName:公会名称(必需)
+     ZYSDKSubmitType:提交类型 // 1: 进入游戏   2: 创建角色    3: 角色升级
  */
 + (void)submitEntergame:(NSDictionary *)dict;
 
@@ -94,23 +95,25 @@
  *  支付接口 根据服务器配置决定使用app支付还是web支付
  *
  *  @param dict        该方法中相关信息的dictionary，其内应为以下key和值:
- ZYSDKOrderId:游戏服务器订单Id         (必需)
- ZYSDKProductId:商品Id               (必需)
- ZYSDKMoney:金额                     (必需)
- ZYSDKProductName:商品名称            (必需)
- ZYSDKServerId:游戏区服ID             (必需)
- ZYSDKRoleId:角色ID                  (必需)
- ZYSDKRoleName:角色名字               (必需)
- ZYSDKRoleLevel:角色等级              (必需)
- ZYSDKNotifyUrl:回调地址              (必需)
- ZYSDKProductDesc:商品描述 (可选)
- ZYSDKoExInfo:订单额外信息(可选)
- ZYSDKServerName:服务器名称 (可选)
- ZYSDKCount:购买数量(可选)
- ZYSDKGameName:游戏名称(可选)
+     ZYSDKOrderId:游戏服务器订单Id         (必需)
+     ZYSDKProductId:商品Id               (必需)
+     ZYSDKMoney:金额                     (必需)
+     ZYSDKProductName:商品名称            (必需)
+     ZYSDKServerId:游戏区服ID             (必需)
+     ZYSDKRoleId:角色ID                  (必需)
+     ZYSDKRoleName:角色名字               (必需)
+     ZYSDKRoleLevel:角色等级              (必需)
+     ZYSDKNotifyUrl:回调地址              (必需)
+     ZYSDKProductDesc:商品描述 (可选)
+     ZYSDKExInfo:额外信息(可选)
+     ZYSDKCPPrivateInfo:cp透传信息
+     ZYSDKServerName:服务器名称 (可选)
+     ZYSDKCount:购买数量(可选)
+     ZYSDKGameName:游戏名称(可选)
  
  *  @param payDelegate 支付完成后的回调
  */
+
 + (void)shopping:(NSDictionary *)dict payDelegate:(id<ZYGamePayDelegate>)payDelegate;
 
 
@@ -187,7 +190,7 @@
 
 /**
  防沉迷
- 
+
  @param antiAddictionDelegate 代理
  */
 + (void)addAntiAddictionDelegate:(id<ZYGameAntiAddictionDelegate>)antiAddictionDelegate;
